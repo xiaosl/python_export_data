@@ -14,7 +14,6 @@ del_data = delData.DelData()
 save_file = saveFile.SaveFile()
 
 export_config = the_config.export_config
-# tables = mysql_exec("show tables",mysql_config)
 tables = mysql.get_tables()
 for table in tables:
     ##获取表中数据条数
@@ -46,11 +45,6 @@ for table in tables:
                 print data_msg_list
 
                 save_file.write_file(data_msg_list)
-                #写入文件
-            # INSERT INTO `block` VALUES ('11', '系统权限管理', '211', '', 'on', '0', '2011-08-12 06:48:03', '2013-04-12 10:59:58', 'jiacj', '2');
             start += size
-            break
-        # sql += " limit %d,%d" % (start,length)
 
-    # break
 
