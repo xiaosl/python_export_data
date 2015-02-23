@@ -1,6 +1,6 @@
 #!/bin/env python
 # -*-coding:utf-8-*-
-
+import sys
 import MySQLdb
 import config
 
@@ -26,7 +26,8 @@ class MysqlExec(object):
             result = cursor.fetchall()
         except MySQLdb.Error, e:
             error_content = "Mysql Error %d: %s" % (e.args[0], e.args[1])
-            raise error_content
+            print error_content
+            sys.exit()
         finally:
             if cursor is not None:
                 cursor.close()

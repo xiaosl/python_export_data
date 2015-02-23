@@ -1,5 +1,5 @@
 
 def suffix_encrypt(data):
-    return 'sfsdfsd'
+    return '11111'
 def prefix_encrypt(data):
-    return data
+    return 'aaaaa'

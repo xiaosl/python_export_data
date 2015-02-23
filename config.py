@@ -83,10 +83,4 @@ class Config(object):
         self.mysql_config_list[mysql_server] = {'config':mysql_server,'host':host,'port':port,'username':username,'password':password,'database':database}
 
 
-# network_driver_name = get_config('net_work_driver', 'name', 'mysql_config.ini')
-# local_outside_ip=commands.getoutput("/sbin/ifconfig %s 2>/dev/null | sed -n '/inet addr:/ s/inet addr:/IPADDR=/pg' | awk -F\" \" '{print $1}'|awk -F\"=\" '{print $2}'" % network_driver_name)
-
-
-
-
 

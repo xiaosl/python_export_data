@@ -2,7 +2,7 @@
 # -*-coding:utf-8-*-
 
 import commands
-import sys
+import os
 import mysqlExec
 import saveFile
 import delData
@@ -12,6 +12,7 @@ the_config = config.Config.GetInstance()
 mysql = mysqlExec.MysqlExec(the_config.mysql_config_list['talk_server'])
 del_data = delData.DelData()
 save_file = saveFile.SaveFile()
+
 
 export_config = the_config.export_config
 tables = mysql.get_tables()
@@ -36,7 +37,7 @@ for table in tables:
         size=500
         while start <= end:
             if (start+size) > end:
-                size = end-start
+                size = end-start+1
             datas = mysql.get_datas(table[0],start,size)
             print datas
             if datas :
@@ -47,4 +48,5 @@ for table in tables:
                 save_file.write_file(data_msg_list)
             start += size
 
-
+#推送
+print os.system('shell/tuisong.sh')
